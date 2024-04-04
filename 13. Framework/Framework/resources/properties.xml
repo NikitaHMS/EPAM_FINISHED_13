@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<properties>
+  <testdata>
+    <browser desc="browser for tests">firefox</browser>
+    <environment desc="test environment">default</environment>
+  </testdata>
+  <userdata desc="environment-based user credentials">
+    <proton>
+      <username env="default">ivan.navi222test@proton.me</username>
+      <password env="default">H,#:T:F5@j-qeNQ</password>
+    </proton>
+    <gmail>
+      <username env="default">atickinnick.test@gmail.com</username>
+      <password env="default">Atickin111</password>
+    </gmail>
+  </userdata>
+  <available>
+    <browsers>
+	chrome
+	firefox
+	</browsers>
+    <environments>
+	default
+	</environments>
+  </available>
+</properties>
