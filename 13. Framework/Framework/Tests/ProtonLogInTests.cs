@@ -1,10 +1,8 @@
 using SeleniumExtras.WaitHelpers;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Tool;
 using Model;
-using OpenQA.Selenium.DevTools.V119.Network;
 using OpenQA.Selenium.Support.Extensions;
 
 /// <remarks>
@@ -18,21 +16,24 @@ namespace Tests
     public class ProtonLogInTests
     {
         public TestContext TestContext { get; set; }
-        private static IWebDriver browser;
+        private static IWebDriver driver;
         private static WebDriverWait wait;
 
         [ClassInitialize]
         public static void OneTimeSetUp(TestContext context)
         {
-            browser = DriverSingleton.getDriver();
-            wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30.0));
-            browser.Manage().Window.Maximize();
-            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            UserDataManager.SetEnvironment(context.Properties["environment"].ToString());
+
+            driver = DriverSingleton.getDriver(context.Properties["browser"].ToString());
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30.0));
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            browser.Quit();
+            driver.Quit();
         }
 
         [TestMethod]
@@ -41,13 +42,13 @@ namespace Tests
             User user = new UserCreator()
                 .getProtonUser()
                 .withInvalidLogin();
-            Proton email = new(browser);
+            Proton email = new(driver);
             string expected = "Неверные учетные данные для входа. Попробуйте снова.";
 
             email.Navigate();
             email.LogIn(user);
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//form[@name='loginForm']/div[@data-testid='login:error-block']")));
-            IWebElement loginError = browser.FindElement(By.XPath("//form[@name='loginForm']/div[@data-testid='login:error-block']"));
+            IWebElement loginError = driver.FindElement(By.XPath("//form[@name='loginForm']/div[@data-testid='login:error-block']"));
 
             Assert.AreEqual(expected, loginError.Text);
         }
@@ -58,12 +59,12 @@ namespace Tests
             User user = new UserCreator()
                 .getProtonUser()
                 .withInvalidPassword();
-            Proton email = new(browser);
+            Proton email = new(driver);
             string expected = "Пароль неверен. Пожалуйста, попробуйте другой пароль.";
 
             email.Navigate();
             email.LogIn(user);
-            IWebElement passwordError = browser.FindElement(By.XPath("//form[@name='loginForm']/div[@data-testid='login:error-block']"));
+            IWebElement passwordError = driver.FindElement(By.XPath("//form[@name='loginForm']/div[@data-testid='login:error-block']"));
 
             Assert.AreEqual(expected, passwordError.Text);
         }
@@ -74,12 +75,12 @@ namespace Tests
             User user = new UserCreator()
                 .getProtonUser()
                 .withEmptyLogin();
-            Proton email = new(browser);
+            Proton email = new(driver);
             string expected = "Это обязательное поле";
 
             email.Navigate();
             email.LogIn(user);
-            IWebElement loginError = browser.FindElement(By.XPath("//div[@id='id-3']/span"));
+            IWebElement loginError = driver.FindElement(By.XPath("//div[@id='id-3']/span"));
 
             Assert.AreEqual(expected, loginError.Text);
         }
@@ -90,12 +91,12 @@ namespace Tests
             User user = new UserCreator()
                 .getProtonUser()
                 .withBlankLogin();
-            Proton email = new(browser);
+            Proton email = new(driver);
             string expected = "Это обязательное поле";
 
             email.Navigate();
             email.LogIn(user);
-            IWebElement loginError = browser.FindElement(By.XPath("//div[@id='id-3']/span"));
+            IWebElement loginError = driver.FindElement(By.XPath("//div[@id='id-3']/span"));
 
             Assert.AreEqual(expected, loginError.Text);
         }
@@ -106,13 +107,13 @@ namespace Tests
             User user = new UserCreator()
                 .getProtonUser()
                 .withInapropriateLogin();
-            Proton email = new(browser);
+            Proton email = new(driver);
             string expected = "Недопустимое имя пользователя";
 
             email.Navigate();
             email.LogIn(user);
             wait.Until(ExpectedConditions.ElementIsVisible((By.XPath("//span[@class='notification__content']"))));
-            IWebElement loginError = browser.FindElement(By.XPath("//span[@class='notification__content']"));
+            IWebElement loginError = driver.FindElement(By.XPath("//span[@class='notification__content']"));
 
             Assert.AreEqual(expected, loginError.Text);
         }
@@ -123,12 +124,12 @@ namespace Tests
             User user = new UserCreator()
                 .getProtonUser()
                 .withEmptyPassword();
-            Proton email = new(browser);
+            Proton email = new(driver);
             string expected = "Это обязательное поле";
 
             email.Navigate();
             email.LogIn(user);
-            IWebElement passwordError = browser.FindElement(By.XPath("//div[@id='id-4']/span"));
+            IWebElement passwordError = driver.FindElement(By.XPath("//div[@id='id-4']/span"));
 
             Assert.AreEqual(expected, passwordError.Text);
         }
@@ -139,12 +140,12 @@ namespace Tests
             User user = new UserCreator()
                 .getProtonUser()
                 .withBlankPassword();
-            Proton email = new(browser);
+            Proton email = new(driver);
             string expected = "Это обязательное поле";
 
             email.Navigate();
             email.LogIn(user);
-            IWebElement passwordError = browser.FindElement(By.XPath("//div[@id='id-4']/span"));
+            IWebElement passwordError = driver.FindElement(By.XPath("//div[@id='id-4']/span"));
 
             Assert.AreEqual(expected, passwordError.Text);
         }
@@ -155,12 +156,12 @@ namespace Tests
             User user = new UserCreator()
                 .getProtonUser()
                 .withCredentialsFromProperty();
-            Proton email = new(browser);
+            Proton email = new(driver);
             string expected = user.getLogin();
 
             email.Navigate();
             email.LogIn(user);
-            IWebElement logInConfirm = browser.FindElement(By.XPath("//span[contains(@class, 'user-dropdown-email')]"));
+            IWebElement logInConfirm = driver.FindElement(By.XPath("//span[contains(@class, 'user-dropdown-email')]"));
 
             Assert.AreEqual(expected, logInConfirm.Text);
         }
@@ -171,7 +172,7 @@ namespace Tests
             if (TestContext.CurrentTestOutcome == UnitTestOutcome.Failed)
             {
                 string screenshotPath = $"{PathSetter.toScreenshotsDir()}{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
-                browser.TakeScreenshot().SaveAsFile(screenshotPath);
+                driver.TakeScreenshot().SaveAsFile(screenshotPath);
                 TestContext.AddResultFile(screenshotPath);
             }
         }

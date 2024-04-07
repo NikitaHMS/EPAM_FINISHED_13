@@ -1,23 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tool
+﻿namespace Tool
 {
     public static class PathSetter
     {
         private static string fullPath = Environment.CurrentDirectory;
-        private static string propertiesPath = @"resources\properties.xml";
+        private static string userDataPath = @"resources\userData.xml";
         private static string screenshotsPath = @"screenshots\";
         private static string newPath;
 
-        public static string toPropertiesFile()
+        public static string toUserDataFile()
         {
-            return setPath(propertiesPath);
+            return setPath(userDataPath);
         }
 
         public static string toScreenshotsDir()

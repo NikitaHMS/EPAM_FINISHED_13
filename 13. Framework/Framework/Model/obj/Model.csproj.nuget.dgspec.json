@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\Model\\Model.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\model\\Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\Model\\Model.csproj": {
+    "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\Model\\Model.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\model\\Model.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\Model\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,11 +53,11 @@
             },
             "Selenium.Support": {
               "target": "Package",
-              "version": "[4.17.0, )"
+              "version": "[4.19.0, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
-              "version": "[4.17.0, )"
+              "version": "[4.19.0, )"
             }
           },
           "imports": [
@@ -122,15 +122,15 @@
             },
             "Selenium.Support": {
               "target": "Package",
-              "version": "[4.17.0, )"
+              "version": "[4.19.0, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
-              "version": "[4.17.0, )"
+              "version": "[4.19.0, )"
             },
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
-              "version": "[121.0.6167.8500, )"
+              "version": "[123.0.6312.8600, )"
             }
           },
           "imports": [

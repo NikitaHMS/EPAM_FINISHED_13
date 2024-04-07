@@ -33,10 +33,10 @@
           "build/_._": {}
         }
       },
-      "Selenium.Support/4.17.0": {
+      "Selenium.Support/4.19.0": {
         "type": "package",
         "dependencies": {
-          "Selenium.WebDriver": "4.17.0"
+          "Selenium.WebDriver": "4.19.0"
         },
         "compile": {
           "lib/netstandard2.0/WebDriver.Support.dll": {
@@ -49,7 +49,7 @@
           }
         }
       },
-      "Selenium.WebDriver/4.17.0": {
+      "Selenium.WebDriver/4.19.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
@@ -68,7 +68,7 @@
           "buildTransitive/Selenium.WebDriver.targets": {}
         }
       },
-      "Selenium.WebDriver.ChromeDriver/121.0.6167.8500": {
+      "Selenium.WebDriver.ChromeDriver/123.0.6312.8600": {
         "type": "package",
         "build": {
           "build/_._": {}
@@ -80,8 +80,8 @@
         "dependencies": {
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
           "PageMaps": "1.0.0",
-          "Selenium.Support": "4.17.0",
-          "Selenium.WebDriver": "4.17.0",
+          "Selenium.Support": "4.19.0",
+          "Selenium.WebDriver": "4.19.0",
           "Util": "1.0.0"
         },
         "compile": {
@@ -96,9 +96,9 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
-          "Selenium.Support": "4.17.0",
-          "Selenium.WebDriver": "4.17.0",
-          "Selenium.WebDriver.ChromeDriver": "121.0.6167.8500"
+          "Selenium.Support": "4.19.0",
+          "Selenium.WebDriver": "4.19.0",
+          "Selenium.WebDriver.ChromeDriver": "123.0.6312.8600"
         },
         "compile": {
           "bin/placeholder/PageMaps.dll": {}
@@ -113,9 +113,9 @@
         "dependencies": {
           "Model": "1.0.0",
           "Selenium.Firefox.WebDriver": "0.27.0",
-          "Selenium.Support": "4.17.0",
-          "Selenium.WebDriver": "4.17.0",
-          "Selenium.WebDriver.ChromeDriver": "121.0.6167.8500"
+          "Selenium.Support": "4.19.0",
+          "Selenium.WebDriver": "4.19.0",
+          "Selenium.WebDriver.ChromeDriver": "123.0.6312.8600"
         },
         "compile": {
           "bin/placeholder/Tool.dll": {}
@@ -192,24 +192,24 @@
         "selenium.firefox.webdriver.nuspec"
       ]
     },
-    "Selenium.Support/4.17.0": {
-      "sha512": "Ex4FJp8lD3Dsy6bJdey4wehDQrS7mYBln6oL82Ni4adWcfIz0fF7IUfyp8RK/7KkP4hzz2mu30AacvMltTdB7w==",
+    "Selenium.Support/4.19.0": {
+      "sha512": "mMghl/3vzRNbE1FA57Iqpw8206DCKekvXl+6PKi811/fg98HSomrknvHgI4aZbfJEuL7Y2IKFt1oBbbUQT0elQ==",
       "type": "package",
-      "path": "selenium.support/4.17.0",
+      "path": "selenium.support/4.19.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "icon.png",
         "lib/netstandard2.0/WebDriver.Support.dll",
         "lib/netstandard2.0/WebDriver.Support.xml",
-        "selenium.support.4.17.0.nupkg.sha512",
+        "selenium.support.4.19.0.nupkg.sha512",
         "selenium.support.nuspec"
       ]
     },
-    "Selenium.WebDriver/4.17.0": {
-      "sha512": "wHwWPvQkgZv+k24pncPZswRdSF4AhF2bFVoF7MrY4Xw122j9L89TNGZUvdjdmscPk2XGpRK1fFQODOKopibQEw==",
+    "Selenium.WebDriver/4.19.0": {
+      "sha512": "rguRY+Kbiow0s7RHtnHXnJdMgsmqAOOtv7ZGBtIQ1DbErkFtksrZHdUMcKyMK6VKNMmfsViqcCDGw4mPSPT70w==",
       "type": "package",
-      "path": "selenium.webdriver/4.17.0",
+      "path": "selenium.webdriver/4.19.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -222,14 +222,14 @@
         "manager/linux/selenium-manager",
         "manager/macos/selenium-manager",
         "manager/windows/selenium-manager.exe",
-        "selenium.webdriver.4.17.0.nupkg.sha512",
+        "selenium.webdriver.4.19.0.nupkg.sha512",
         "selenium.webdriver.nuspec"
       ]
     },
-    "Selenium.WebDriver.ChromeDriver/121.0.6167.8500": {
-      "sha512": "vGSkTin9LkYpkG5DbTVF78tI2p4Tchw+gnzTxA6JpwLKvaf5mJrNd5TgpfpsMNg5DuI5jsc2oW0ZhrA86wY6fw==",
+    "Selenium.WebDriver.ChromeDriver/123.0.6312.8600": {
+      "sha512": "1OnN2EepEdRxCKkVJHZFaLoCNWpwELO1un2RzDcpRsjulemXiBV9xv4Fz0ylKQtTRGeKapTSAK5E1eZL+draQw==",
       "type": "package",
-      "path": "selenium.webdriver.chromedriver/121.0.6167.8500",
+      "path": "selenium.webdriver.chromedriver/123.0.6312.8600",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -246,14 +246,14 @@
         "driver/win32/LICENSE.chromedriver",
         "driver/win32/chromedriver.exe",
         "nupkg-icon.png",
-        "selenium.webdriver.chromedriver.121.0.6167.8500.nupkg.sha512",
+        "selenium.webdriver.chromedriver.123.0.6312.8600.nupkg.sha512",
         "selenium.webdriver.chromedriver.nuspec"
       ]
     },
     "Model/1.0.0": {
       "type": "project",
-      "path": "../Model/Model.csproj",
-      "msbuildProject": "../Model/Model.csproj"
+      "path": "../model/Model.csproj",
+      "msbuildProject": "../model/Model.csproj"
     },
     "PageMaps/1.0.0": {
       "type": "project",

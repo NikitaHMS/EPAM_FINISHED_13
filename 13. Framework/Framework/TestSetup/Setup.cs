@@ -1,29 +1,24 @@
-﻿using OpenQA.Selenium.DevTools.V119.DOM;
-using System.Diagnostics;
-using System.Reflection;
-using System.Xml;
+﻿using System.Diagnostics;
 using Tool;
-
 
 namespace Tests
 {
     public static class Setup
     {
         private static bool isOn = true;
+        private static bool isJenkins = false;
         private static string choice;
 
          public static void Main()
         {
             while (isOn)
             {
-
-                Console.WriteLine(PathSetter.toSolutionDir());
                 Console.WriteLine("\n" + "------Test Setup------" + "\n");
 
                 Console.WriteLine($"1 Start tests");
                 Console.WriteLine($"2 Choose Browser.       Current: {PropertiesManager.getBrowser()}");
                 Console.WriteLine($"3 Choose Environment.   Current: {PropertiesManager.getEnvironment()}");
-                Console.WriteLine($"4 Run with Jenkins?     Current: No");
+                Console.WriteLine($"4 Run with Jenkins?     Current: {(isJenkins ? "Yes" : "No")}");
 
                 Console.Write("\n" + ">");
                 choice = Console.ReadLine();
@@ -31,20 +26,30 @@ namespace Tests
                 switch (choice)
                 {
                     case "1":
-                        
+
+                        if (isJenkins == false)
+                        {
+                            PropertiesManager.saveChanges();
+
+                            string scriptArgument = $"cd {PathSetter.toSolutionDir()}; dotnet test";
+                            string scriptFileName = "powershell.exe";
+                            ProcessStartInfo scriptStartInfo = new(scriptFileName, scriptArgument);
+
+                            scriptStartInfo.CreateNoWindow = false;
+
+                            Process scriptProcess = new();
+                            scriptProcess.StartInfo = scriptStartInfo;
+                            scriptProcess.Start();
+                        }
+                        else
+                        {
+                            Process proc = new();
+                            proc.StartInfo.UseShellExecute = true;
+                            proc.StartInfo.FileName = "localhost:8080/job/Framework/build?token=FrmwrkTkn";
+                            proc.Start();
+                        }
+
                         isOn = false;
-
-                        PropertiesManager.saveChanges();
-
-                        string scriptArgument = $"cd {PathSetter.toSolutionDir()}; dotnet test"; 
-                        string scriptFileName = "powershell.exe";
-                        ProcessStartInfo scriptStartInfo = new(scriptFileName, scriptArgument);
-
-                        scriptStartInfo.CreateNoWindow = false;
-
-                        Process scriptProcess = new();
-                        scriptProcess.StartInfo = scriptStartInfo;
-                        scriptProcess.Start();
 
                         break;
 
@@ -99,12 +104,31 @@ namespace Tests
 
                     case "4":
 
-                        Console.WriteLine(PathSetter.toPropertiesFile());
+                        Console.WriteLine("\n" + "Run tests in Jenkins?" + "\n");
+                        Console.WriteLine("1 Yes");
+                        Console.WriteLine("2 No");
+                        Console.Write("\n" + ">");
+                        choice = Console.ReadLine();
+
+                        if (choice == "1")
+                        {
+                            isJenkins = true;
+                        }
+                        else if (choice == "2")
+                        {
+                            isJenkins = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("\n" + "Invalid input.");
+                            goto case "4";
+                        }
+
                         break;
 
                     default:
 
-                        Console.WriteLine("Invalid input.");
+                        Console.WriteLine("\n" + "Invalid input.");
 
                         break;
                 }

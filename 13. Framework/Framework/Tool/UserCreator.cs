@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using Model;
-using OpenQA.Selenium.DevTools;
+﻿using Model;
 
 namespace Tool
 {
@@ -18,15 +10,15 @@ namespace Tool
 
         public UserCreator getProtonUser()
         {
-            login = PropertiesManager.getProtonUsername();
-            password = PropertiesManager.getProtonPassword();
+            login = UserDataManager.getProtonUsername();
+            password = UserDataManager.getProtonPassword();
             return this;
         }
 
         public UserCreator getGmailUser()
         {
-            login = PropertiesManager.getGmailUsername();
-            password = PropertiesManager.getGmailPassword();
+            login = UserDataManager.getGmailUsername();
+            password = UserDataManager.getGmailPassword();
             return this;
         }
 

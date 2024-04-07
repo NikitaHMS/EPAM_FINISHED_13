@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Chrome;
 
@@ -14,17 +9,23 @@ namespace Tool
         private static IWebDriver? driver;
         private DriverSingleton() { }
 
-        public static IWebDriver getDriver()
+        public static IWebDriver getDriver(string browser)
         {
             if (driver == null)
             {
-                switch (PropertiesManager.getBrowser())
+                switch (browser)
                 {
                     case "firefox":
-                        return new FirefoxDriver();
+                        driver = new FirefoxDriver();
+                        return driver;
+
+                    case "chrome":
+                        driver = new ChromeDriver();
+                        return driver;
 
                     default:
-                        return new ChromeDriver();
+                        driver = new ChromeDriver();
+                        return driver;
                 }
             }
             else

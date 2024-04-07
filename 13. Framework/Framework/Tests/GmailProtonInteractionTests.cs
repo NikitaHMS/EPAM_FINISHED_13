@@ -1,11 +1,9 @@
 ﻿using SeleniumExtras.WaitHelpers;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Tool;
 using Model;
 using Util;
-using System.Net.Http.Headers;
 using OpenQA.Selenium.Support.Extensions;
 
 namespace Tests
@@ -15,7 +13,7 @@ namespace Tests
     public class GmailProtonInteractionTests
     {
         public TestContext TestContext { get; set; }
-        private static IWebDriver browser;
+        private static IWebDriver driver;
         private static WebDriverWait wait;
 
         private static User userProton;
@@ -29,8 +27,10 @@ namespace Tests
         [ClassInitialize]
         public static void OneTimeSetUp(TestContext context)
         {
-            browser = DriverSingleton.getDriver();
-            wait = new WebDriverWait(browser, TimeSpan.FromSeconds(60.0));
+            UserDataManager.SetEnvironment(context.Properties["environment"].ToString());
+
+            driver = DriverSingleton.getDriver(context.Properties["browser"].ToString());
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60.0));
 
             userProton = new UserCreator()
                 .getProtonUser()
@@ -39,19 +39,19 @@ namespace Tests
                 .getGmailUser()
                 .withCredentialsFromProperty();
 
-            emailGmail = new Gmail(browser);
-            emailProton = new Proton(browser);
+            emailGmail = new Gmail(driver);
+            emailProton = new Proton(driver);
 
             letter = new Letter();
 
-            browser.Manage().Window.Maximize();
-            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         [ClassCleanup]
         public static void CleanUp()
         {
-            browser.Quit();
+            driver.Quit();
         }
 
 
@@ -59,7 +59,7 @@ namespace Tests
         public void A_GMail_SendRandomLetterToProton_LetterIsSent()
         {
             string recipient = userProton.getLogin();
-            string expected = "Сообщение отправлено.";                                  //TODO: Make language-neutral
+            string expected = "Сообщение отправлено.";                                  
             
             emailGmail.Navigate();
             emailGmail.LogIn(userGmail);
@@ -84,7 +84,7 @@ namespace Tests
         [TestMethod]
         public void C_Proton_ValidateLetterUnread_IsUnread()
         {
-            IWebElement readStatus = browser.FindElement(By.XPath("//div[@data-testid='message-list-loaded']/div[3]/div[1]/div[1]/div[1][contains(@class, 'unread')]"));
+            IWebElement readStatus = driver.FindElement(By.XPath("//div[@data-testid='message-list-loaded']/div[3]/div[1]/div[1]/div[1][contains(@class, 'unread')]"));
 
             Assert.IsNotNull(readStatus);
         }
@@ -94,7 +94,7 @@ namespace Tests
         {
             string expected = userGmail.getLogin();
 
-            IWebElement senderEMail = browser.FindElement(By.XPath("//div[@data-testid='message-list-loaded']/div[3]/div[1]/div[1]//span[@title][@data-testid='message-column:sender-address']"));
+            IWebElement senderEMail = driver.FindElement(By.XPath("//div[@data-testid='message-list-loaded']/div[3]/div[1]/div[1]//span[@title][@data-testid='message-column:sender-address']"));
             string sender = senderEMail.GetAttribute("title");
 
             Assert.AreEqual(expected, sender);
@@ -106,7 +106,7 @@ namespace Tests
             string expected = letter.getContent();
 
             emailProton.OpenLatestLetter();
-            IWebDriver frame = browser.SwitchTo().Frame(browser.FindElement(By.XPath("//iframe[@data-testid='content-iframe']")));
+            IWebDriver frame = driver.SwitchTo().Frame(driver.FindElement(By.XPath("//iframe[@data-testid='content-iframe']")));
             IWebElement letterContent = frame.FindElement(By.XPath("//body/div/div/div/div[1]"));
             string content = letterContent.Text;
 
@@ -121,9 +121,9 @@ namespace Tests
 
             emailProton.SendReply(alias);
             Thread.Sleep(3000);                                                     // Waiting for the letter to be sent 
-            browser.Navigate().GoToUrl("https://mail.proton.me/u/0/all-sent");
+            driver.Navigate().GoToUrl("https://mail.proton.me/u/0/all-sent");
             emailProton.OpenLatestLetter();
-            IWebDriver frame = browser.SwitchTo().Frame(browser.FindElement(By.XPath("//iframe[@data-testid='content-iframe']")));
+            IWebDriver frame = driver.SwitchTo().Frame(driver.FindElement(By.XPath("//iframe[@data-testid='content-iframe']")));
             IWebElement sentText = frame.FindElement(By.XPath("//body/div/div/div/div[1]"));
             string sentAlias = sentText.Text;
 
@@ -140,9 +140,9 @@ namespace Tests
             wait.Until(ExpectedConditions.ElementExists(By.CssSelector("div[class='aRI']")));        
             emailGmail.OpenLatestLetter();                                                                                      
             wait.Until(ExpectedConditions.ElementExists(By.XPath("//div[@class='a3s aiL ']/div[1]")));
-            newAlias = browser.FindElement(By.XPath("//div[@class='a3s aiL ']/div[1]")).Text;
+            newAlias = driver.FindElement(By.XPath("//div[@class='a3s aiL ']/div[1]")).Text;
             emailGmail.ChangeAlias(newAlias);
-            expected = browser.FindElement(By.XPath("//div[@data-index='1']//div[@class='gWjfMb']")).Text;
+            expected = driver.FindElement(By.XPath("//div[@data-index='1']//div[@class='gWjfMb']")).Text;
 
             Assert.AreEqual(expected, newAlias);
         }
@@ -153,7 +153,7 @@ namespace Tests
             if (TestContext.CurrentTestOutcome == UnitTestOutcome.Failed)
             {
                 string screenshotPath = $"{PathSetter.toScreenshotsDir()}{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
-                browser.TakeScreenshot().SaveAsFile(screenshotPath);
+                driver.TakeScreenshot().SaveAsFile(screenshotPath);
                 TestContext.AddResultFile(screenshotPath);
             }
         }

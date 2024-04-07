@@ -1,12 +1,7 @@
-﻿using SeleniumExtras.WaitHelpers;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Interactions;
 using Model;
 using Tool;
-using System.Linq.Expressions;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using OpenQA.Selenium.Support.Extensions;
 
 namespace Tests
@@ -16,22 +11,25 @@ namespace Tests
     public class GmailLogInTests
     {
         public TestContext TestContext { get; set; }
-        private static IWebDriver browser;
+        private static IWebDriver driver;
         private static WebDriverWait wait;
 
         [ClassInitialize]
         public static void OneTimeSetUp(TestContext context)
         {
-            browser = DriverSingleton.getDriver();
-            wait = new WebDriverWait(browser, TimeSpan.FromSeconds(15.0));
-            browser.Manage().Window.Maximize();
-            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            UserDataManager.SetEnvironment(context.Properties["environment"].ToString());
+
+            driver = DriverSingleton.getDriver(context.Properties["browser"].ToString());
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15.0));
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
         }
 
         [ClassCleanup]
         public static void CleanUp()
         {
-            browser.Quit();
+            driver.Quit();
         }
 
         [TestMethod]
@@ -40,12 +38,12 @@ namespace Tests
             User user = new UserCreator()
                 .getGmailUser()
                 .withInvalidLogin();
-            Gmail email = new(browser);
+            Gmail email = new(driver);
             string expected = "Не удалось найти аккаунт Google.";
             
             email.Navigate();
             email.SubmitLogin(user);
-            string loginError = browser.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
+            string loginError = driver.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
 
             Assert.AreEqual(expected, loginError);
 
@@ -57,13 +55,13 @@ namespace Tests
             User user = new UserCreator()
                 .getGmailUser()
                 .withInvalidPassword();
-            Gmail email = new(browser);
+            Gmail email = new(driver);
             string expected = "Неверный пароль. Повторите попытку или нажмите на ссылку \"Забыли пароль?\", чтобы сбросить его.";
             
             email.Navigate();
             email.SubmitLogin(user);
             email.SubmitPassword(user);
-            IWebElement loginError = browser.FindElement(By.CssSelector("div[jsname='B34EJ'] > span[jsslot]"));
+            IWebElement loginError = driver.FindElement(By.CssSelector("div[jsname='B34EJ'] > span[jsslot]"));
 
             Assert.AreEqual(expected, loginError.Text);
         }
@@ -74,12 +72,12 @@ namespace Tests
             User user = new UserCreator()
                 .getGmailUser()
                 .withEmptyLogin();
-            Gmail email = new(browser);
+            Gmail email = new(driver);
             string expected = "Введите адрес электронной почты или номер телефона.";
             
             email.Navigate();
             email.SubmitLogin(user);
-            string loginError = browser.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
+            string loginError = driver.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
 
             Assert.AreEqual(expected, loginError);
         }
@@ -90,12 +88,12 @@ namespace Tests
             User user = new UserCreator()
                 .getGmailUser()
                 .withBlankLogin();
-            Gmail email = new(browser);
+            Gmail email = new(driver);
             string expected = "Введите адрес электронной почты или номер телефона.";
             
             email.Navigate();
             email.SubmitLogin(user);
-            string loginError = browser.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
+            string loginError = driver.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
 
             Assert.AreEqual(expected, loginError);
         }
@@ -106,12 +104,12 @@ namespace Tests
             User user = new UserCreator()
                 .getGmailUser()
                 .withInapropriateLogin();
-            Gmail email = new(browser);
+            Gmail email = new(driver);
             string expected = "Не удалось найти аккаунт Google.";
 
             email.Navigate();
             email.SubmitLogin(user);
-            string loginError = browser.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
+            string loginError = driver.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
 
             Assert.AreEqual(expected, loginError);
         }
@@ -122,13 +120,13 @@ namespace Tests
             User user = new UserCreator()
                 .getGmailUser()
                 .withEmptyPassword();
-            Gmail email = new(browser);
+            Gmail email = new(driver);
             string expected = "Введите пароль";
             email.Navigate();
 
             email.SubmitLogin(user);
             email.SubmitPassword(user);
-            IWebElement loginError = browser.FindElement(By.CssSelector("div[jsname='B34EJ'] > span[jsslot]"));
+            IWebElement loginError = driver.FindElement(By.CssSelector("div[jsname='B34EJ'] > span[jsslot]"));
             string error = loginError.Text.Replace(".", "");
 
             Assert.AreEqual(expected, error);
@@ -140,13 +138,13 @@ namespace Tests
             User user = new UserCreator()
                 .getGmailUser()
                 .withBlankPassword();
-            Gmail email = new(browser);
+            Gmail email = new(driver);
             string expected = "Введите пароль";
             
             email.Navigate();
             email.SubmitLogin(user);
             email.SubmitPassword(user);
-            IWebElement loginError = browser.FindElement(By.CssSelector("div[jsname='B34EJ'] > span[jsslot]"));
+            IWebElement loginError = driver.FindElement(By.CssSelector("div[jsname='B34EJ'] > span[jsslot]"));
             string error = loginError.Text.Replace(".", "");
 
             Assert.AreEqual(expected, error);
@@ -158,13 +156,13 @@ namespace Tests
             User user = new UserCreator()
                 .getGmailUser()
                 .withCredentialsFromProperty();
-            Gmail email = new(browser);
+            Gmail email = new(driver);
             string expected = user.getLogin();
 
             email.Navigate();
             email.SubmitLogin(user);
             email.SubmitPassword(user);
-            string accIconInfo = browser.FindElement(By.XPath("//header/div[2]/div[3]/div[1]/div[2]/div/a")).GetAttribute("aria-label");
+            string accIconInfo = driver.FindElement(By.XPath("//header/div[2]/div[3]/div[1]/div[2]/div/a")).GetAttribute("aria-label");
 
             Assert.IsTrue(accIconInfo.Contains(expected));
         }
@@ -175,7 +173,8 @@ namespace Tests
             if (TestContext.CurrentTestOutcome == UnitTestOutcome.Failed)
             {
                 string screenshotPath = $"{PathSetter.toScreenshotsDir()}{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
-                browser.TakeScreenshot().SaveAsFile(screenshotPath);
+
+                driver.TakeScreenshot().SaveAsFile(screenshotPath);
                 TestContext.AddResultFile(screenshotPath);
             }
         }

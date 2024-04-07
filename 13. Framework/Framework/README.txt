@@ -1,7 +1,5 @@
----------------------------
-Commands to run tests
----------------------------
+-------------------------
+The command to run tests
+-------------------------
 
-1. "cd" to the solution
-
-2. "dotnet run --project TestSetup"
+"{path_to_solution} dotnet run --project TestSetup"
