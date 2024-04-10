@@ -1,5 +1,17 @@
--------------------------
-The command to run tests
--------------------------
+---------------------------------
+The command template to run tests
+---------------------------------
 
-"{path_to_solution} dotnet run --project TestSetup"
+dotnet test --filter "TestCategory={type of test}&TestCategory={environment}" -e browser={browser} -e environment={environment}
+
+---------------------------------
+Available parameters
+---------------------------------
+
+Types of tests: smoke
+
+Browsers: chrome, firefox
+
+Environments: desktop, mobile 
+//NOTE: mobile environment is only available for chrome browser
+	 

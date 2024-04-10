@@ -27,10 +27,8 @@ namespace Tests
         [ClassInitialize]
         public static void OneTimeSetUp(TestContext context)
         {
-            UserDataManager.SetEnvironment(context.Properties["environment"].ToString());
-
-            driver = DriverSingleton.getDriver(context.Properties["browser"].ToString());
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60.0));
+            string browser = Environment.GetEnvironmentVariable("browser");
+            string environment = Environment.GetEnvironmentVariable("environment");
 
             userProton = new UserCreator()
                 .getProtonUser()
@@ -43,6 +41,9 @@ namespace Tests
             emailProton = new Proton(driver);
 
             letter = new Letter();
+
+            driver = DriverSetter.getDriver(browser, environment);
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60.0));
 
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);

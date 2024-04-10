@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PageMaps\PageMaps.csproj" />
-    <ProjectReference Include="..\util\Util.csproj" />
+    <ProjectReference Include="..\Util\Util.csproj" />
   </ItemGroup>
 
 </Project>

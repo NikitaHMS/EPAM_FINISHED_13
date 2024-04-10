@@ -3,10 +3,10 @@ using OpenQA.Selenium.Support.UI;
 using Model;
 using Tool;
 using OpenQA.Selenium.Support.Extensions;
+using SeleniumExtras.WaitHelpers;
 
 namespace Tests
 {
-    [Ignore]
     [TestClass]
     public class GmailLogInTests
     {
@@ -17,9 +17,10 @@ namespace Tests
         [ClassInitialize]
         public static void OneTimeSetUp(TestContext context)
         {
-            UserDataManager.SetEnvironment(context.Properties["environment"].ToString());
+            string browser = Environment.GetEnvironmentVariable("browser");
+            string environment = Environment.GetEnvironmentVariable("environment");
 
-            driver = DriverSingleton.getDriver(context.Properties["browser"].ToString());
+            driver = DriverSetter.getDriver(browser, environment);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15.0));
 
             driver.Manage().Window.Maximize();
@@ -33,6 +34,9 @@ namespace Tests
         }
 
         [TestMethod]
+        [TestCategory("smoke")]
+        [TestCategory("desktop")]
+        [TestCategory("mobile")]
         public void Input_InvalidLogin_GetError()
         {
             User user = new UserCreator()
@@ -50,6 +54,9 @@ namespace Tests
         }
 
         [TestMethod]
+        [TestCategory("smoke")]
+        [TestCategory("desktop")]
+        [TestCategory("mobile")]
         public void Input_InvalidPassword_GetError()
         {
             User user = new UserCreator()
@@ -67,6 +74,9 @@ namespace Tests
         }
 
         [TestMethod]
+        [TestCategory("smoke")]
+        [TestCategory("desktop")]
+        [TestCategory("mobile")]
         public void Input_EmptyLogin_GetError()
         {
             User user = new UserCreator()
@@ -81,8 +91,11 @@ namespace Tests
 
             Assert.AreEqual(expected, loginError);
         }
-        
+
         [TestMethod]
+        [TestCategory("smoke")]
+        [TestCategory("desktop")]
+        [TestCategory("mobile")]
         public void Input_BlankLogin_GetError()
         {
             User user = new UserCreator()
@@ -99,6 +112,9 @@ namespace Tests
         }
 
         [TestMethod]
+        [TestCategory("smoke")]
+        [TestCategory("desktop")]
+        [TestCategory("mobile")]
         public void Input_InappropriateLogin_GetError()
         {
             User user = new UserCreator()
@@ -115,6 +131,9 @@ namespace Tests
         }
 
         [TestMethod]
+        [TestCategory("smoke")]
+        [TestCategory("desktop")]
+        [TestCategory("mobile")]
         public void Input_EmptyPassword_GetError()
         {
             User user = new UserCreator()
@@ -131,8 +150,11 @@ namespace Tests
 
             Assert.AreEqual(expected, error);
         }
-        
+
         [TestMethod]
+        [TestCategory("smoke")]
+        [TestCategory("desktop")]
+        [TestCategory("mobile")]
         public void Input_BlankPassword_GetError()
         {
             User user = new UserCreator()
@@ -151,7 +173,9 @@ namespace Tests
         }
 
         [TestMethod]
-        public void Input_ValidData_LoginSuccessful()
+        [TestCategory("smoke")]
+        [TestCategory("desktop")]
+        public void Input_ValidData_LoginSuccessful_Desktop()
         {
             User user = new UserCreator()
                 .getGmailUser()
@@ -165,6 +189,28 @@ namespace Tests
             string accIconInfo = driver.FindElement(By.XPath("//header/div[2]/div[3]/div[1]/div[2]/div/a")).GetAttribute("aria-label");
 
             Assert.IsTrue(accIconInfo.Contains(expected));
+        }
+
+        [TestMethod]
+        [TestCategory("smoke")]
+        [TestCategory("mobile")]
+        public void Input_ValidData_LoginSuccessful_Mobile()
+        {
+            User user = new UserCreator()
+               .getGmailUser()
+               .withCredentialsFromProperty();
+            Gmail email = new(driver);
+            string expected = user.getLogin();
+
+            email.Navigate();
+            email.SubmitLogin(user);
+            email.SubmitPassword(user);
+            driver.FindElement(By.XPath("//button[@class='Jn']")).Click();
+            driver.FindElement(By.XPath("//div[@class='  Lf']//div[@role='button'][2]")).Click();
+            IWebElement accData = driver.FindElement(By.XPath("//div[@class='xm']/div[3]/div[1]"));
+            bool isValidLogin = wait.Until(ExpectedConditions.TextToBePresentInElement(accData, expected));
+                
+            Assert.IsTrue(isValidLogin);
         }
 
         [TestCleanup]

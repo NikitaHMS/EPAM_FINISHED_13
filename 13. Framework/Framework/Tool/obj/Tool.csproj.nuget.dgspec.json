@@ -177,8 +177,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\Model\\Model.csproj"
+              "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\model\\Model.csproj"
               }
             }
           }

@@ -10,7 +10,7 @@ The final framework should include the following:
 
     4. Property files with test data for at least two different environments
 
-        5. XML suites for smoke tests and other tests
+    5. XML suites for smoke tests and other tests
 
         6. If the test fails, a screenshot with the date and time is taken.
 

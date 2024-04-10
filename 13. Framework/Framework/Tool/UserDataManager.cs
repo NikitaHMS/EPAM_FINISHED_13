@@ -1,12 +1,10 @@
-﻿using System.Runtime.CompilerServices;
-using System.Xml;
+﻿using System.Xml;
 
 namespace Tool
 {
     public class UserDataManager
     {
         private static XmlDocument userData;
-        private static string environment;
         private static string path;
 
         private static XmlDocument UserData
@@ -29,27 +27,23 @@ namespace Tool
             UserData.Save(path);
         }
 
-        public static void SetEnvironment(string env)
-        {
-            environment = env;
-        }
 
         public static string getProtonUsername()
         {
-            return UserData.SelectSingleNode($"/userdata/proton/username[@env='{environment}']").InnerText;
+            return UserData.SelectSingleNode($"/userdata/proton/username").InnerText;
         }
         public static string getProtonPassword()
         {
-            return UserData.SelectSingleNode($"/userdata/proton/password[@env='{environment}']").InnerText;
+            return UserData.SelectSingleNode($"/userdata/proton/password").InnerText;
         }
 
         public static string getGmailUsername()
         {
-            return UserData.SelectSingleNode($"/userdata/gmail/username[@env='{environment}']").InnerText;
+            return UserData.SelectSingleNode($"/userdata/gmail/username").InnerText;
         }
         public static string getGmailPassword()
         {
-            return UserData.SelectSingleNode($"/userdata/gmail/password[@env='{environment}']").InnerText;
+            return UserData.SelectSingleNode($"/userdata/gmail/password").InnerText;
         }
     }
 }
