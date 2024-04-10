@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C6LpJBSxGESWUaON/zclQSVmGqXcIoEcyYXRhYHJM5tWlnTi8VBEnnhBpP7a2gOUtnrdxyt3+5OqeoC5zeUwFw==",
+  "dgSpecHash": "CYOy7a3QoCXfgmVgd5Fynh7+3PBNGzAZct6Bj+NVCqIlA0TMb7fmgcc4XVOtQiiYWCf/hMnsdMfVGC8mJOJkgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj",
+  "projectFilePath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",

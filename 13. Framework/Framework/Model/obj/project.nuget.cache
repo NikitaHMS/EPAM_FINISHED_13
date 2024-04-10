@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lNXedXDODqB9BVhqI8NDvM7XhdmzKf00kyNEb1C9GbR1bgcK5BPbgIiJRxHI+CkyrlPfOv/UP+wvDfMs5IxSaQ==",
+  "dgSpecHash": "iJEmS7D8Nmw758TPRBfs9u5AD/YoibIv7+y5n4+Kh5wHwABEZ7nSGB3DVvSmVa530M7H4vBpdqwzNdKIwTJmOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\model\\Model.csproj",
+  "projectFilePath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\model\\Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",

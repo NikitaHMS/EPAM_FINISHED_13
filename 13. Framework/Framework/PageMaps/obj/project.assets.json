@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj",
+      "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj",
       "projectName": "PageMaps",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj",
+      "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\PageMaps\\obj\\",
+      "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\PageMaps\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

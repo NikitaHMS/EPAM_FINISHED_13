@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "On+ptKVUvZOvZwzcsEBqKHUctNqC2H0k9yS39fbv7r9cRgCOGvSek9qISOSBA1O24V5WJ8vYyp3eL9IvdY3a6A==",
+  "dgSpecHash": "mlDLaFBn6ryMWirAqmn8honjx5xwuxhXgGWj+0SWrTBbEPKi7+uiP0KsxDuxP6FTK6nfUhFGOqyE/wRGIYV5Jw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\EPAM_FINISHED\\13. Framework\\Framework\\Tests\\Tests.csproj",
+  "projectFilePath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
