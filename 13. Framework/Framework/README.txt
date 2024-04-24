@@ -2,7 +2,7 @@
 The command template to run tests
 ---------------------------------
 
-dotnet test --filter TestCategory={type of test} -e browser={browser} -e device={device}
+dotnet test --filter TestCategory={type of test} -e browser={browser}
 
 ---------------------------------
 Available parameters
