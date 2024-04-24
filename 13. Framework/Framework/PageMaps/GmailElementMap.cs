@@ -5,9 +5,9 @@ namespace PageMaps
     public class GmailElementMap
     {
         private readonly IWebDriver browser;
-        public GmailElementMap(IWebDriver browser)
+        public GmailElementMap(IWebDriver driver)
         {
-            this.browser = browser;
+            this.browser = driver;
         }
 
 

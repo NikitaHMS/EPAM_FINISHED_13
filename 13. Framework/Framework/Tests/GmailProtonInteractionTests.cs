@@ -8,7 +8,6 @@ using OpenQA.Selenium.Support.Extensions;
                                                                     //TODO: adapt to the new parametrization strategy and environment changes
 namespace Tests
 {
-    [Ignore]
     [TestClass]
     public class GmailProtonInteractionTests
     {
@@ -27,8 +26,7 @@ namespace Tests
         [ClassInitialize]
         public static void OneTimeSetUp(TestContext context)
         {
-            string browser = Environment.GetEnvironmentVariable("browser");
-            string environment = Environment.GetEnvironmentVariable("environment");
+            string? browser = Environment.GetEnvironmentVariable("browser");
 
             userProton = new UserCreator()
                 .getProtonUser()
@@ -37,13 +35,13 @@ namespace Tests
                 .getGmailUser()
                 .withCredentialsFromProperty();
 
+            driver = DriverSetter.getDriver(browser);
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60.0));
+
             emailGmail = new Gmail(driver);
             emailProton = new Proton(driver);
 
             letter = new Letter();
-
-            driver = DriverSetter.getDriver(browser, environment);
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60.0));
 
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -57,7 +55,7 @@ namespace Tests
 
 
         [TestMethod]
-        public void A_GMail_SendRandomLetterToProton_LetterIsSent()
+        public void A_Gmail_SendRandomLetterToProton_LetterIsSent()
         {
             string recipient = userProton.getLogin();
             string expected = "Сообщение отправлено.";                                  
@@ -77,17 +75,20 @@ namespace Tests
             
             emailProton.Navigate();
             emailProton.LogIn(userProton);
-            IWebElement sentLetter = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath($"//div[@data-testid='message-list-loaded']/div[3]/div[1]/div[1]/div[@data-testid='message-item:{subject}']")));
+            wait.Until(ExpectedConditions.ElementExists(By.XPath("//div[@data-shortcut-target='item-container-wrapper'][1]/div")));
+            IWebElement latestLetterData = driver.FindElement(By.XPath("//div[@data-shortcut-target='item-container-wrapper'][1]/div"));
+            bool hasArrived = latestLetterData.GetAttribute("data-testid").Contains(subject);
 
-            Assert.IsNotNull(sentLetter);
+            Assert.IsTrue(hasArrived);
         }
 
         [TestMethod]
         public void C_Proton_ValidateLetterUnread_IsUnread()
         {
-            IWebElement readStatus = driver.FindElement(By.XPath("//div[@data-testid='message-list-loaded']/div[3]/div[1]/div[1]/div[1][contains(@class, 'unread')]"));
+            IWebElement latestLetterData = driver.FindElement(By.XPath("//div[@data-shortcut-target='item-container-wrapper'][1]/div"));
+            bool isUnread = latestLetterData.GetAttribute("class").Contains("unread");
 
-            Assert.IsNotNull(readStatus);
+            Assert.IsTrue(isUnread);
         }
 
         [TestMethod]
@@ -132,12 +133,13 @@ namespace Tests
         }
 
         [TestMethod]
-        public void G_GMail_LogInChangeAliasVerifyAlias_SentAliasIsSet()
+        public void G_Gmail_LogInChangeAliasVerifyAlias_SentAliasIsSet()
         {
             string expected;
             string newAlias;
             
             emailGmail.Navigate();
+            emailGmail.LogIn(userGmail);
             wait.Until(ExpectedConditions.ElementExists(By.CssSelector("div[class='aRI']")));        
             emailGmail.OpenLatestLetter();                                                                                      
             wait.Until(ExpectedConditions.ElementExists(By.XPath("//div[@class='a3s aiL ']/div[1]")));

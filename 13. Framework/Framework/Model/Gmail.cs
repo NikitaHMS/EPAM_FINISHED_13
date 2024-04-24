@@ -7,22 +7,22 @@ namespace Model
 {
     public class Gmail : CommonEmail
     {
-        private readonly string url = "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=ASKXGp2LmcgNxQG73DvrrLxxn-gnPesAAgiXfXsWLH6sBqH1ew9CdVPO4_5tK6J-8_NaIzHHSKHr&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S503820059%3A1703767017023636&theme=glif";
+        private readonly string url = "https://accounts.google.com/v3/signin/identifier?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser&ec=asw-gmail-globalnav-signin&theme=mn&ddm=0";
 
-        public Gmail(IWebDriver browser) : base(browser) { }
+        public Gmail(IWebDriver driver) : base(driver) { }
 
         public GmailElementMap Map
         {
             get
             {
-                return new GmailElementMap(browser);
+                return new GmailElementMap(driver);
             }
         }
 
 
         public void Navigate()
         {
-            browser.Navigate().GoToUrl(url);
+            driver.Navigate().GoToUrl(url);
         }
         public void LogIn(User user)
         {
@@ -57,8 +57,8 @@ namespace Model
         }
         public void ChangeAlias(string newAlias)
         {
-            browser.Navigate().GoToUrl("https://myaccount.google.com/profile/nickname/edit?add=true&continue=https%3A%2F%2Fmyaccount.google.com%2Fpersonal-info%3Fpli%3D1");
-            IJavaScriptExecutor jse = (IJavaScriptExecutor)browser;
+            driver.Navigate().GoToUrl("https://myaccount.google.com/profile/nickname/edit?add=true&continue=https%3A%2F%2Fmyaccount.google.com%2Fpersonal-info%3Fpli%3D1");
+            IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
             jse.ExecuteScript("arguments[0].value=arguments[1];",
                 Map.NewAliasTextbox, newAlias);
             jse.ExecuteScript("arguments[0].removeAttribute('disabled')",
@@ -67,7 +67,7 @@ namespace Model
         }
         public void OpenLatestLetter()
         {
-            var open = new Actions(browser).MoveToElement(Map.LatestLetter).Click();
+            var open = new Actions(driver).MoveToElement(Map.LatestLetter).Click();
 
             open.Perform();
         }

@@ -5,12 +5,12 @@ namespace Model
 {
     public class CommonEmail
     {
-        protected readonly IWebDriver browser;
+        protected readonly IWebDriver driver;
         protected WebDriverWait wait;
-        public CommonEmail(IWebDriver browser)
+        public CommonEmail(IWebDriver driver)
         {
-            this.browser = browser;
-            wait = new WebDriverWait(browser, TimeSpan.FromSeconds(60.0));
+            this.driver = driver;
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60.0));
         }
     }
 }

@@ -5,9 +5,9 @@ namespace PageMaps
 	public class ProtonElementMap
     {
         private readonly IWebDriver browser;
-        public ProtonElementMap(IWebDriver browser)
+        public ProtonElementMap(IWebDriver driver)
         {
-            this.browser = browser;
+            this.browser = driver;
         }
 
 
@@ -45,7 +45,7 @@ namespace PageMaps
         {
             get
             {
-                return browser.FindElement(By.XPath("//div[@data-shortcut-target='item-container-wrapper']"));
+                return browser.FindElement(By.XPath("//div[@data-shortcut-target='item-container-wrapper'][1]"));
             }
         }
     }

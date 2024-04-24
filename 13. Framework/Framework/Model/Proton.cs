@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using PageMaps;
+using OpenQA.Selenium.Support.Extensions;
 
 namespace Model
 {
@@ -9,24 +10,25 @@ namespace Model
     {
         private readonly string url = "https://account.proton.me/ru/mail";
 
-        public Proton(IWebDriver browser) : base(browser) { }
+        public Proton(IWebDriver driver) : base(driver) { }
         
         public ProtonElementMap Map
         {
             get
             {
-                return new ProtonElementMap(browser);
+                return new ProtonElementMap(driver);
             }
         }
 
 
         public void Navigate()
         {
-            browser.Navigate().GoToUrl(url);
+            driver.Navigate().GoToUrl(url);
         }
+
         public void LogIn(User user)
         {
-            isAlertPresent(browser);
+            HandleAlert(driver);
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("input[id='username']")));
             Map.LoginField.SendKeys(user.getLogin());
             Map.PasswordField.SendKeys(user.getPassword());
@@ -37,29 +39,28 @@ namespace Model
         {
             Map.LatestLetter.Click();
         }
+
         public void SendReply(string reply)
         {
-            IWebDriver lttrContent = browser.SwitchTo().Frame(browser.FindElement(By.XPath("//iframe[@data-testid='rooster-iframe']")));
-            IWebElement sendReplyBttn = browser.FindElement(By.XPath("//button[@data-testid='composer:send-button']"));
-            var openReplyWin = new Actions(browser).SendKeys("r");
-
+            var openReplyWin = new Actions(driver).SendKeys("r");
             openReplyWin.Perform();
-            lttrContent.FindElement(By.XPath("//div[@id='rooster-editor']/div[1]")).SendKeys(reply);
+
+            driver.SwitchTo().Frame(2);
+            IWebElement lttrContent = driver.FindElement(By.XPath("//div[@id='rooster-editor']/div[1]"));
+            lttrContent.SendKeys(reply);
+
+            IWebElement sendReplyBttn = driver.FindElement(By.XPath("//button[@data-testid='composer:send-button']"));
             sendReplyBttn.Click();
         }
 
-        private void isAlertPresent(IWebDriver driver)
+        private void HandleAlert(IWebDriver driver)
         {
             try
             {
-                return;
-            }
-            catch (UnhandledAlertException)
-            {
                 IAlert alert = driver.SwitchTo().Alert();
                 alert.Accept();
-                return;
             }
+            catch(NoAlertPresentException) { }
         }
     }
 }
