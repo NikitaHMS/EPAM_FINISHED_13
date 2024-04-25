@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\util\\Util.csproj": {}
+    "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\Util.csproj": {}
   },
   "projects": {
-    "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\util\\Util.csproj": {
+    "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\Util.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\util\\Util.csproj",
+        "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\Util.csproj",
         "projectName": "Util",
-        "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\util\\Util.csproj",
+        "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\Util.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\util\\obj\\",
+        "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

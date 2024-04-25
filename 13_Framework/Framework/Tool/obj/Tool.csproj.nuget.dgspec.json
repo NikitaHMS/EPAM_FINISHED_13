@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tool\\Tool.csproj": {}
+    "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tool\\Tool.csproj": {}
   },
   "projects": {
-    "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\model\\Model.csproj": {
+    "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\model\\Model.csproj",
+        "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\model\\Model.csproj",
+        "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\model\\Model.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\model\\obj\\",
+        "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj": {
-                "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj"
+              "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\PageMaps\\PageMaps.csproj": {
+                "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\PageMaps\\PageMaps.csproj"
               },
-              "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Util\\Util.csproj": {
-                "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Util\\Util.csproj"
+              "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Util\\Util.csproj": {
+                "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Util\\Util.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj": {
+    "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\PageMaps\\PageMaps.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj",
+        "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\PageMaps\\PageMaps.csproj",
         "projectName": "PageMaps",
-        "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\PageMaps\\PageMaps.csproj",
+        "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\PageMaps\\PageMaps.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\PageMaps\\obj\\",
+        "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\PageMaps\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -153,14 +153,14 @@
         }
       }
     },
-    "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tool\\Tool.csproj": {
+    "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tool\\Tool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tool\\Tool.csproj",
+        "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tool\\Tool.csproj",
         "projectName": "Tool",
-        "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tool\\Tool.csproj",
+        "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tool\\Tool.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tool\\obj\\",
+        "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tool\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -177,8 +177,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Model\\Model.csproj": {
-                "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Model\\Model.csproj"
+              "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Model\\Model.csproj": {
+                "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Model\\Model.csproj"
               }
             }
           }
@@ -230,14 +230,14 @@
         }
       }
     },
-    "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\util\\Util.csproj": {
+    "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\Util.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\util\\Util.csproj",
+        "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\Util.csproj",
         "projectName": "Util",
-        "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\util\\Util.csproj",
+        "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\Util.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\util\\obj\\",
+        "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

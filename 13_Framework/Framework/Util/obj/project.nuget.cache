@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jCBrBsn6DQsga13CeusDTNG3+3j/wIFOePEWF/4kLnfUfa8CozaCrRYh1dfyq0PtO40anvWDUwanP6Ll31aYIQ==",
+  "dgSpecHash": "yao5KvADRFhiQk2/xF+IO0MVk6QQVwbH9lf/MMUEiJQ0CQrzmKsr+8+7TWIpAJfXLJdJ6+uSL/eO4rel7QuO2Q==",
   "success": true,
-  "projectFilePath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\util\\Util.csproj",
+  "projectFilePath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\Util.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

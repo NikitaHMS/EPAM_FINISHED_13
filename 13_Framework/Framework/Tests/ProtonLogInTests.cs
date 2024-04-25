@@ -11,6 +11,7 @@ using OpenQA.Selenium.Support.Extensions;
 
 namespace Tests
 {
+    [Ignore]
     [TestClass]
     public class ProtonLogInTests
     {

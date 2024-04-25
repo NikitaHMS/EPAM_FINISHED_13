@@ -264,11 +264,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tool\\Tool.csproj",
+      "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tool\\Tool.csproj",
       "projectName": "Tool",
-      "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tool\\Tool.csproj",
+      "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tool\\Tool.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tool\\obj\\",
+      "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tool\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -285,8 +285,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Model\\Model.csproj": {
-              "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Model\\Model.csproj"
+            "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Model\\Model.csproj": {
+              "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Model\\Model.csproj"
             }
           }
         }

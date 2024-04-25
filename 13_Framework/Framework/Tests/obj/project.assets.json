@@ -2018,11 +2018,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tests\\Tests.csproj",
+      "projectUniqueName": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tests\\Tests.csproj",
+      "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tests\\obj\\",
+      "outputPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2039,8 +2039,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tool\\Tool.csproj": {
-              "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13. Framework\\Framework\\Tool\\Tool.csproj"
+            "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tool\\Tool.csproj": {
+              "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Tool\\Tool.csproj"
             }
           }
         }

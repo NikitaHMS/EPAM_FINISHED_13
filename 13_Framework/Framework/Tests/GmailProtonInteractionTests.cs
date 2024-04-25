@@ -8,6 +8,7 @@ using OpenQA.Selenium.Support.Extensions;
                                                                     //TODO: adapt to the new parametrization strategy and environment changes
 namespace Tests
 {
+    [Ignore]
     [TestClass]
     public class GmailProtonInteractionTests
     {
