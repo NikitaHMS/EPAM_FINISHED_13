@@ -2,7 +2,7 @@
 The command template to run tests
 ---------------------------------
 
-dotnet test --filter TestCategory={type of test} -e browser={browser}
+dotnet test --filter TestCategory={type of test} -e browser={browser} --logger html --results-directory .\TestResults
 
 ---------------------------------
 Available parameters
