@@ -5,11 +5,6 @@ using Tool;
 using OpenQA.Selenium.Support.Extensions;
 using SeleniumExtras.WaitHelpers;
 
-/// <remarks>
-/// Input_ValidData_LoginSuccessful():
-///     May require authentification
-/// </remarks>
-
 namespace Tests
 {
     [Ignore]
@@ -188,7 +183,6 @@ namespace Tests
                 string screenshotPath = $"{PathSetter.toScreenshotsDir()}{TestContext.TestName}{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
 
                 driver.TakeScreenshot().SaveAsFile(screenshotPath);
-                //TestContext.AddResultFile(screenshotPath);
             }
         }
     }

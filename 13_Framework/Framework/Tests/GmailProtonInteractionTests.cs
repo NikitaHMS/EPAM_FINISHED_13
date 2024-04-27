@@ -6,11 +6,6 @@ using Model;
 using Util;
 using OpenQA.Selenium.Support.Extensions;
 
-/// <remarks>
-/// Input_ValidData_LoginSuccessful():
-///     May require authentification
-/// </remarks>
-
 namespace Tests
 {
     [Ignore]
@@ -165,7 +160,6 @@ namespace Tests
                 string screenshotPath = $"{PathSetter.toScreenshotsDir()}{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
 
                 driver.TakeScreenshot().SaveAsFile(screenshotPath);
-                //TestContext.AddResultFile(screenshotPath);
             }
         }
     }

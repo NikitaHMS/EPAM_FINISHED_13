@@ -5,11 +5,6 @@ using Tool;
 using Model;
 using OpenQA.Selenium.Support.Extensions;
 
-/// <remarks>
-/// Input_InvalidLogin_GetError():
-///     May require completing captcha
-/// </remarks>
-
 namespace Tests
 {
     [TestClass]
@@ -171,6 +166,7 @@ namespace Tests
 
             email.Navigate();
             email.LogIn(user);
+            driver.FindElement(By.XPath("//button[@data-testid='explore-mail']")).Click();
             IWebElement loginConfirm = driver.FindElement(By.XPath("//span[contains(@class, 'user-dropdown-email')]"));
 
             Assert.AreEqual(expected, loginConfirm.Text);
@@ -184,7 +180,6 @@ namespace Tests
                 string screenshotPath = $"{PathSetter.toScreenshotsDir()}{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
 
                 driver.TakeScreenshot().SaveAsFile(screenshotPath);
-                TestContext.AddResultFile(screenshotPath);
             }
         }
     }
