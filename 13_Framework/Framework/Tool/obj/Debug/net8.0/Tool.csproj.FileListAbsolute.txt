@@ -43,3 +43,26 @@ D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\Tool\obj\Debug\net8.0\To
 D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\Tool\obj\Debug\net8.0\refint\Tool.dll
 D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\Tool\obj\Debug\net8.0\Tool.pdb
 D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\Tool\obj\Debug\net8.0\ref\Tool.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\selenium-manager\macos\selenium-manager
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\selenium-manager\windows\selenium-manager.exe
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\Tool.deps.json
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\Tool.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\Tool.pdb
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\Model.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\PageMaps.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\Util.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\Model.pdb
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\PageMaps.pdb
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\bin\Debug\net8.0\Util.pdb
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\Tool.csproj.AssemblyReference.cache
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\Tool.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\Tool.AssemblyInfoInputs.cache
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\Tool.AssemblyInfo.cs
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\Tool.csproj.CoreCompileInputs.cache
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\Tool.sourcelink.json
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\Tool.csproj.CopyComplete
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\Tool.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\refint\Tool.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\Tool.pdb
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\Tool\obj\Debug\net8.0\ref\Tool.dll

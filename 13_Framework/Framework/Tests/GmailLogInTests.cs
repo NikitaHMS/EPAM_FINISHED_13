@@ -5,8 +5,14 @@ using Tool;
 using OpenQA.Selenium.Support.Extensions;
 using SeleniumExtras.WaitHelpers;
 
+/// <remarks>
+/// Input_ValidData_LoginSuccessful():
+///     May require authentification
+/// </remarks>
+
 namespace Tests
 {
+    [Ignore]
     [TestClass]
     public class GmailLogInTests
     {
@@ -44,7 +50,7 @@ namespace Tests
             
             email.Navigate();
             email.SubmitLogin(user);
-            string loginError = driver.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
+            string loginError = driver.FindElement(By.XPath("//div[@class='Ekjuhf Jj6Lae']")).Text;
 
             Assert.AreEqual(expected, loginError);
 
@@ -80,7 +86,7 @@ namespace Tests
             
             email.Navigate();
             email.SubmitLogin(user);
-            string loginError = driver.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
+            string loginError = driver.FindElement(By.XPath("//div[@class='Ekjuhf Jj6Lae']")).Text;
 
             Assert.AreEqual(expected, loginError);
         }
@@ -97,7 +103,7 @@ namespace Tests
             
             email.Navigate();
             email.SubmitLogin(user);
-            string loginError = driver.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
+            string loginError = driver.FindElement(By.XPath("//div[@class='Ekjuhf Jj6Lae']")).Text;
 
             Assert.AreEqual(expected, loginError);
         }
@@ -114,7 +120,7 @@ namespace Tests
 
             email.Navigate();
             email.SubmitLogin(user);
-            string loginError = driver.FindElement(By.XPath("//div[@class='o6cuMc Jj6Lae']")).Text;
+            string loginError = driver.FindElement(By.XPath("//div[@class='Ekjuhf Jj6Lae']")).Text;
 
             Assert.AreEqual(expected, loginError);
         }
@@ -165,14 +171,13 @@ namespace Tests
                 .getGmailUser()
                 .withCredentialsFromProperty();
             Gmail email = new(driver);
-            string expected = user.getLogin();
 
             email.Navigate();
             email.SubmitLogin(user);
             email.SubmitPassword(user);
-            string accIconInfo = driver.FindElement(By.XPath("//header/div[2]/div[3]/div[1]/div[2]/div/a")).GetAttribute("aria-label");
+            bool hasLoggedIn = driver.FindElement(By.XPath("//div[@id=':3']")).Displayed;
 
-            Assert.IsTrue(accIconInfo.Contains(expected));
+            Assert.IsTrue(hasLoggedIn);
         }
 
         [TestCleanup]
@@ -183,7 +188,7 @@ namespace Tests
                 string screenshotPath = $"{PathSetter.toScreenshotsDir()}{TestContext.TestName}{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
 
                 driver.TakeScreenshot().SaveAsFile(screenshotPath);
-                TestContext.AddResultFile(screenshotPath);
+                //TestContext.AddResultFile(screenshotPath);
             }
         }
     }

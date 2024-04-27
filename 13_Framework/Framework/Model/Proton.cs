@@ -8,7 +8,7 @@ namespace Model
 {
     public class Proton : CommonEmail
     {
-        private readonly string url = "https://account.proton.me/ru/mail";
+        private readonly string url = "https://account.proton.me/ru/login";
 
         public Proton(IWebDriver driver) : base(driver) { }
         
@@ -40,6 +40,9 @@ namespace Model
             Map.LatestLetter.Click();
         }
 
+
+        // Is able to switch to the frame on one day
+        // Is unable to do so on another day 
         public void SendReply(string reply)
         {
             var openReplyWin = new Actions(driver).SendKeys("r");

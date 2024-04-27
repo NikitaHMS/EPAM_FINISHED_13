@@ -5,7 +5,12 @@ using Tool;
 using Model;
 using Util;
 using OpenQA.Selenium.Support.Extensions;
-                                                                    //TODO: adapt to the new parametrization strategy and environment changes
+
+/// <remarks>
+/// Input_ValidData_LoginSuccessful():
+///     May require authentification
+/// </remarks>
+
 namespace Tests
 {
     [Ignore]
@@ -158,8 +163,9 @@ namespace Tests
             if (TestContext.CurrentTestOutcome == UnitTestOutcome.Failed)
             {
                 string screenshotPath = $"{PathSetter.toScreenshotsDir()}{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
+
                 driver.TakeScreenshot().SaveAsFile(screenshotPath);
-                TestContext.AddResultFile(screenshotPath);
+                //TestContext.AddResultFile(screenshotPath);
             }
         }
     }

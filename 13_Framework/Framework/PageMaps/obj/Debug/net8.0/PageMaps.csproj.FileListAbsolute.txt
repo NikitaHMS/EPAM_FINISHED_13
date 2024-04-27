@@ -49,3 +49,19 @@ D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\PageMaps\obj\Debug\net8.
 D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\PageMaps\obj\Debug\net8.0\refint\PageMaps.dll
 D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\PageMaps\obj\Debug\net8.0\PageMaps.pdb
 D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\PageMaps\obj\Debug\net8.0\ref\PageMaps.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\bin\Debug\net8.0\selenium-manager\macos\selenium-manager
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\bin\Debug\net8.0\selenium-manager\windows\selenium-manager.exe
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\bin\Debug\net8.0\PageMaps.deps.json
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\bin\Debug\net8.0\PageMaps.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\bin\Debug\net8.0\PageMaps.pdb
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\obj\Debug\net8.0\PageMaps.csproj.AssemblyReference.cache
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\obj\Debug\net8.0\PageMaps.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\obj\Debug\net8.0\PageMaps.AssemblyInfoInputs.cache
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\obj\Debug\net8.0\PageMaps.AssemblyInfo.cs
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\obj\Debug\net8.0\PageMaps.csproj.CoreCompileInputs.cache
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\obj\Debug\net8.0\PageMaps.sourcelink.json
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\obj\Debug\net8.0\PageMaps.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\obj\Debug\net8.0\refint\PageMaps.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\obj\Debug\net8.0\PageMaps.pdb
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\PageMaps\obj\Debug\net8.0\ref\PageMaps.dll

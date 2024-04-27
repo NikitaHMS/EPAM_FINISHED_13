@@ -21,3 +21,15 @@ D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\util\obj\Debug\net8.0\Ut
 D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\util\obj\Debug\net8.0\refint\Util.dll
 D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\util\obj\Debug\net8.0\Util.pdb
 D:\GitProjects\EPAM_FINISHED_13\13. Framework\Framework\util\obj\Debug\net8.0\ref\Util.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\bin\Debug\net8.0\Util.deps.json
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\bin\Debug\net8.0\Util.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\bin\Debug\net8.0\Util.pdb
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\obj\Debug\net8.0\Util.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\obj\Debug\net8.0\Util.AssemblyInfoInputs.cache
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\obj\Debug\net8.0\Util.AssemblyInfo.cs
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\obj\Debug\net8.0\Util.csproj.CoreCompileInputs.cache
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\obj\Debug\net8.0\Util.sourcelink.json
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\obj\Debug\net8.0\Util.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\obj\Debug\net8.0\refint\Util.dll
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\obj\Debug\net8.0\Util.pdb
+D:\GitProjects\EPAM_FINISHED_13\13_Framework\Framework\util\obj\Debug\net8.0\ref\Util.dll

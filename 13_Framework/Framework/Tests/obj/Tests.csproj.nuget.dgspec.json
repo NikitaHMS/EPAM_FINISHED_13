@@ -31,8 +31,8 @@
               "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\PageMaps\\PageMaps.csproj": {
                 "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\PageMaps\\PageMaps.csproj"
               },
-              "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Util\\Util.csproj": {
-                "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Util\\Util.csproj"
+              "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\Util.csproj": {
+                "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\util\\Util.csproj"
               }
             }
           }
@@ -272,8 +272,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Model\\Model.csproj": {
-                "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\Model\\Model.csproj"
+              "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\model\\Model.csproj": {
+                "projectPath": "D:\\GitProjects\\EPAM_FINISHED_13\\13_Framework\\Framework\\model\\Model.csproj"
               }
             }
           }
