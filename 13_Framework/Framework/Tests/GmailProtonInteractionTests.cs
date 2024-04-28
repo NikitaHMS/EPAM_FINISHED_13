@@ -8,7 +8,6 @@ using OpenQA.Selenium.Support.Extensions;
 
 namespace Tests
 {
-    [Ignore]
     [TestClass]
     public class GmailProtonInteractionTests
     {
@@ -77,6 +76,7 @@ namespace Tests
             
             emailProton.Navigate();
             emailProton.LogIn(userProton);
+            driver.FindElement(By.XPath("//button[@data-testid='explore-mail']")).Click();
             wait.Until(ExpectedConditions.ElementExists(By.XPath("//div[@data-shortcut-target='item-container-wrapper'][1]/div")));
             IWebElement latestLetterData = driver.FindElement(By.XPath("//div[@data-shortcut-target='item-container-wrapper'][1]/div"));
             bool hasArrived = latestLetterData.GetAttribute("data-testid").Contains(subject);

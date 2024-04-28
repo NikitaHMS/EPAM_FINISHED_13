@@ -7,7 +7,6 @@ using SeleniumExtras.WaitHelpers;
 
 namespace Tests
 {
-    [Ignore]
     [TestClass]
     public class GmailLogInTests
     {

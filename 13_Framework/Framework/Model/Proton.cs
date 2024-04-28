@@ -43,12 +43,13 @@ namespace Model
 
         // Is able to switch to the frame on one day
         // Is unable to do so on another day 
+        // Stopped working entirely at some point
         public void SendReply(string reply)
         {
             var openReplyWin = new Actions(driver).SendKeys("r");
             openReplyWin.Perform();
 
-            driver.SwitchTo().Frame(2);
+            driver.SwitchTo().Frame("//iframe[@data-testid='rooster-iframe']");
             IWebElement lttrContent = driver.FindElement(By.XPath("//div[@id='rooster-editor']/div[1]"));
             lttrContent.SendKeys(reply);
 
