@@ -2,6 +2,7 @@
 using SeleniumExtras.WaitHelpers;
 using PageMaps;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.Extensions;
 
 namespace Model
 {
@@ -26,8 +27,10 @@ namespace Model
         }
         public void LogIn(User user)
         {
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("input[type='email']")));
             Map.LoginField.SendKeys($"{user.getLogin()}");
             Map.LoginSubmitButton.Click();
+
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("input[type='password']")));
             Map.PasswordField.SendKeys($"{user.getPassword()}");
             Map.PasswordSubmitButton.Click();

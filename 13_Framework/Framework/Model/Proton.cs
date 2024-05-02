@@ -40,12 +40,13 @@ namespace Model
             Map.LatestLetter.Click();
         }
 
-
+        // Commented block:
         // Is able to switch to the frame on one day
         // Is unable to do so on another day 
         // Stopped working entirely at some point
         public void SendReply(string reply)
         {
+            /*
             var openReplyWin = new Actions(driver).SendKeys("r");
             openReplyWin.Perform();
 
@@ -55,6 +56,16 @@ namespace Model
 
             IWebElement sendReplyBttn = driver.FindElement(By.XPath("//button[@data-testid='composer:send-button']"));
             sendReplyBttn.Click();
+            */
+
+            var openReplyWin = new Actions(driver).SendKeys("r");
+            var sendAlias = new Actions(driver).SendKeys(reply);
+            var sendReply = new Actions(driver).KeyDown(Keys.Control).SendKeys(Keys.Enter);
+
+            openReplyWin.Perform();
+            Thread.Sleep(100);
+            sendAlias.Perform();
+            sendReply.Perform();
         }
 
         private void HandleAlert(IWebDriver driver)

@@ -177,7 +177,7 @@ namespace Tests
         {
             if (TestContext.CurrentTestOutcome == UnitTestOutcome.Failed)
             {
-                string screenshotPath = $"{PathSetter.toScreenshotsDir()}{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
+                string screenshotPath = $"{PathSetter.toScreenshotsDir()}{TestContext.TestName}{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
 
                 driver.TakeScreenshot().SaveAsFile(screenshotPath);
             }
